@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="permissions-policy" content="microphone=*">
+    <title>WatchNat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px; 
+  outline: none;
+  
+        }
+
+  .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: rgb(86, 80, 80);
+  color: white;
+  font-size: 16px;
+  padding: 25px 64px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.997);
+}
+
+
+
+.container .btn:hover {
+  background-color: black;
+}
+
+
+div.scrollmenu {
+  background-color: none;
+  overflow: auto;
+  white-space: nowrap;
+  border-radius: 22px;
+
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  
+}
+
+div.scrollmenu2 {
+  background-color: none;
+  overflow: auto;
+  white-space: nowrap;
+  
+
+}
+
+div.scrollmenu2 a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  
+}
+
+div.scrollmenu3 {
+  background-color: none;
+  overflow: auto;
+  white-space: nowrap;
+  
+
+}
+
+div.scrollmenu3 a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  
+}
+
+div.scrollmenu4 {
+  background-color: none;
+  overflow: auto;
+  white-space: nowrap;
+  
+
+}
+
+div.scrollmenu4 a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  
+}
+
+div.scrollmenu5 {
+  background-color: none;
+  overflow: auto;
+  white-space: nowrap;
+  
+
+}
+
+div.scrollmenu5 a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  
+}
+
+div.scrollmenu6 {
+  background-color: none;
+  overflow: auto;
+  white-space: nowrap;
+  
+
+}
+
+div.scrollmenu6 a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  
+}
+
+div.scrollmenu7 {
+  background-color: none;
+  overflow: auto;
+  white-space: nowrap;
+  
+
+}
+
+div.scrollmenu7 a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(19, 18, 18);
+  height: 20px;
+  padding: 9px;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  color: white;
+  
+
+  
+  
+}
+
+.footer a {
+  text-align: center;
+  padding: 10px;
+  color: rgb(212, 217, 225);
+  text-decoration: none;
+  font-size: 15px;
+  justify-content: space-between;
+  
+}
+
+.footer a:hover {
+  background-color: rgb(57, 55, 55);
+  
+}
+
+.active-footer {
+  background-color: rgb(57, 55, 55);
+}
+
+@media screen and (max-width: 500px) {
+  .footer a {
+    float: none;
+    display: block;
+  }
+  .footer {
+    padding-right: 20px;
+  }
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  margin-top: 19px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+
+</style>
+    
+
+</head>
+<body style="background-color: black; margin: 0; padding: 0;">
+  
+  <div class="header">
+ <a href="./index.html"><img src="./Logo/WatchNat Assets/W__3_-removebg-preview.png" width="120px" style="margin-top: -3px; margin-left: -2;"></a>
+  <div class="header-right">
+    <a class="active" href="./search.html"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #ffffff;"></i></a>
+    <a href="./login.html"><i class="fa-solid fa-user fa-lg" style="color: #fafafa;"></i></a>
+    <a href="./subscriptions.html"><i class="fa-solid fa-crown fa-lg" style="color: #f1c40f;"></i></a>
+    <a href="./live.html"><i class="fa-solid fa-tv fa-lg" style="color: #f6f5f3;"></i></a>
+    <span class="menu-toggle" style="font-size:28px;cursor:pointer;padding:10px;" onclick="openNav()">&#9776;</span>
+  </div>
+</div>
+<div class="btn-container" style="position: relative; text-align: center; color: white; margin-top: 20px;">
+<img src="./Logo/WatchNat Assets/Superman.jpg" width="80%" height="80%" style="border-radius: 22px; box-shadow: 0 0 10px rgba(150, 148, 148, 0.997); position: relative; margin-top: -25px; display: block; margin-left: auto; margin-right: auto;" >
+<a href="./live.html"><button class="btn"><i class="fa-sharp fa-solid fa-play fa-2xl" style="color: #f10909;"></i></button></a>
+</div>
+<div class="title-with-dot">
+    <h1 style="color: white;">Streaming Now</h1>
+    <div class="glow-dot"></div>
+</div>
+
+<div class="scrollmenu">
+  <img src="./Logo/WatchNat Assets/Superman.jpg" width="150px" height="200px" style="border-radius: 22px;">
+  <img src="./Logo/WatchNat Assets/stranger things.jpg" width="150px" height="200px" style="border-radius: 22px;">
+  <img src="./Logo/WatchNat Assets/smallvile.jpg" width="150px" height="200px" style="border-radius: 22px;" >
+  <img src="./Logo/WatchNat Assets/terminator.jpg" width="150px" height="200px" style="border-radius: 22px;">
+  <img src="./Logo/WatchNat Assets/Jackie chan.jpg" width="150px" height="200px" style="border-radius: 22px;">
+</div>
+
+<h1 style="color: white;">Free Movies <i class="fa-solid fa-download fa-lg" style="color: #ffffff;"></i></h1> 
+<div class="scrollmenu2">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Billy the Kid returns" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="House on Haunted Hill" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="The day the earth stood still" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Frankenstein" width="150px" height="20%" style="border-radius: 22px;">
+</div>
+
+   <h1>Actions</h1>
+   <div class="scrollmenu3">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Action Movies" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror Movies" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror Movies" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror Movies" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror Movies" width="150px" height="20%" style="border-radius: 22px;">
+        </div>
+  <h1>Horror</h1>
+  <div class="scrollmenu4">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror Movies" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror Movies" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror Movies" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror Movies" width="150px" height="20%" style="border-radius: 22px;">
+  </div>
+
+   <div class="scrollmenu5">
+  <h1>Romance</h1>
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Romance Movies" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror Movies" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror Movies" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror Movies" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror Movies" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror Movies" width="150px" height="20%" style="border-radius: 22px;">
+   </div>
+  <h1>Comedy</h1>
+        <div class="scrollmenu6">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Comedy Movies" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror Movies" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror Movies" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror Movies" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror Movies" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror Movies" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror Movies" width="150px" height="20%" style="border-radius: 22px;">
+        </div>
+   <div class="scrollmenu7">     
+  <h1>Adventure</h1> 
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Adventure Movies" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror Movies" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror Movies" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror Movies" width="150px" height="20%" style="border-radius: 22px;">
+        <img src="./Logo/WatchNat Assets/Cinema image.jpg" alt="Horror Movies" width="150px" height="20%" style="border-radius: 22px;">
+   </div>
+<footer>
+ <div class="footer">
+  <a class="active-footer" href="./index.html"><i class="fa-solid fa-house fa-2xl" style="color: #fcfcfc;"></i>  </a> 
+  <a href="./signup.html"><i class="fa-solid fa-user-plus fa-2xl" style="color: #ffffff;"></i></a>
+  <a href="./frequentlyaskedquestion.html"><i class="fa-solid fa-circle-question fa-2xl" style="color: #ffffff;"></i></a>
+  <a href="https://tawk.to/chat/6959d2da85cf7b197c865c53/1je3dv9a2"><i class="fa-chisel fa-regular fa-comment fa-2xl" style="color: #ffffff;"></i></a>
+  <div style="cursor: pointer; padding: 0 14px;">
+    <i class="fa-solid fa-microphone fa-2xl" style="color: #ffffff;"></i>
+    <elevenlabs-convai agent-id="agent_8701kf22g2fyf1a8541gnh92j05v"></elevenlabs-convai>
+  </div>
+  <elevenlabs-convai agent-id="agent_8701kf22g2fyf1a8541gnh92j05v"></elevenlabs-convai><script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+ <div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="#">Action</a>
+    <a href="#">Romance</a>
+    <a href="#">Science-Fiction</a>
+    <a href="#">Comedie</a>
+    <a href="#">Horror</a>
+    <a href="#">Drama</a>
+    <a href="#">Documentary</a>
+    <a href="#">Carribean</a>
+    <a href="#">African</a>
+    <a href="#">Asian</a>
+    <a href="#">Anime</a>
+  </div>
+</div>
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+     
+ 
+</div>
+ 
+    
+   
+      
+</footer>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+   
+  .footernav {
+  overflow: hidden;
+  background-color: white;
+}
+
+.footernav a {
+  
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  border-bottom: 3px solid transparent;
+}
+
+.footernav a:hover {
+  border-bottom: 3px solid red;
+}
+
+.footernav a.active {
+  border-bottom: 3px solid red;
+}
+
+    </style>
+</head>
+<body style="background-color: white;">
+ <h1 style="color: black;">Frequently Asked Questions</h1>
+
+<button class="accordion">How We Use Your Personal Information?</button>
+<div class="panel">
+  <p>We use your personal information for the following purposes:</p> 
+<ul>
+    <li>To provide and improve our services</li>
+    <li>To communicate with you about our services</li>
+    <li>To personalize your experience on our website</li>
+    <li>To fulfill your requests for information or services</li>
+    <li>To comply with legal and regulatory requirements</li>   
+</ul>
+</div>
+
+<button class="accordion">How We Protect Your Personal Information?</button>
+<div class="panel">
+  <p>We implement various security measures to protect your personal information from unauthorized access, disclosure, alteration, or destruction.</p>
+  </p>Disclosures of Your Personal Information</p>   
+  <p>We may disclose your personal information to third parties in the following circumstances:</p>
+<ul>
+    <li>With your consent</li>
+    <li>To comply with legal and regulatory requirements</li>
+    <li>To protect the rights, property, or safety of us, our customers, or others</li>
+    <li>To provide our services to third parties</li>   
+</ul>
+</div>
+
+<button class="accordion">Is WatchNat App Avalaible In All Countries In The World?</button>
+<div class="panel">
+    <p>No, WatchNat is not available in all countries. The availability of our app depends on licensing agreements and regional restrictions. Please check our "Supported Countries" page for the most up-to-date information on where our app is available.</p>   
+</div>
+<button class="accordion">How Can I Delete My Account?</button>
+<div class="panel">
+    <p>To delete your account, please contact our support team via the <a href="./contact.html" style="color: black;"> Contact Us</a> section and request for account deletion. Make sure to include your Username and the email associated with your account for verification purposes.</p>
+</div>
+<button class="accordion">How Can I Change My Subscription Plan?</button>
+<div class="panel">
+    <p>To change your subscription plan, log in to your account and navigate to the "Account Settings" or "Subscription" section. From there, you can select a new plan and follow the prompts to update your subscription.</p>   
+</div>
+<button class="accordion">What Payment Methods Do You Accept?</button>
+<div class="panel">
+    <p>We accept various payment methods, including credit/debit cards (Visa, MasterCard, American Express), PayPal, and other popular online payment options. Please check our "Payment Methods" page for the most up-to-date information on accepted payment methods.</p>   
+</div>
+<button class="accordion">How Can I Contact Customer Support?</button>
+<div class="panel">
+    <p>You can contact our customer support team through the "Contact Us" section on our website. We offer support via email, live chat, and phone. Our support team is available 24/7 to assist you with any questions or issues you may have.</p> 
+</div>
+<button class="accordion">Do You Offer A Free Trial?</button>
+<div class="panel">
+    <p>Yes, we offer a free trial for new users. The duration of the free trial may vary depending on current promotions. Please visit our "Free Trial" page for more details and to sign up for the trial.</p> 
+</div>
+<button class="accordion">Can I Cancel My Subscription Anytime?</button>
+<div class="panel">
+    <p>Yes, you can cancel your subscription at any time. To cancel, log in to your account, navigate to the "Account Settings" or "Subscription" section, and follow the prompts to cancel your subscription. Please note that cancellations will take effect at the end of the current billing cycle.</p> 
+   </div>
+   <button class="accordion"> What is our Refund Policy?</button>
+    <div class="panel">
+      <p>We offer a refund policy for certain subscription plans. If you are not satisfied with our service, please contact our customer support team within 14 days of your purchase to request a refund. Refunds will be processed according to our refund policy guidelines.</p>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+} 
+</script>
+
+<footer>
+  <p style="color: black; text-align: center; padding: 20px;">&copy; 2024 WatchNat. All rights reserved.</p>
+
+    <div class="footernav" >
+  <a class="active" href="#home">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+    </div>
+
+</footer>
+</body>
+</html>
